@@ -1,0 +1,838 @@
+/* 1. Page Hero Banner (Halaman Internal) */
+.page-hero {
+  position: relative;
+  background: #064E24;
+  color: #FBFAF6;
+  padding: 48px 0 64px;
+  overflow: hidden;
+}
+
+.page-hero-pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .7;
+  pointer-events: none;
+}
+
+/* 2. Breadcrumb Navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #9EDCB9;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.breadcrumb a {
+  color: #9EDCB9;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.breadcrumb a:hover {
+  color: #FBFAF6;
+}
+
+.breadcrumb .sep {
+  opacity: .4;
+}
+
+.breadcrumb .cur {
+  color: #FAC601;
+  font-weight: 600;
+}
+
+/* 3. Content Box Container */
+.content-box {
+  background: #FFFFFF;
+  border: 1px solid #E4E0D3;
+  border-radius: clamp(18px, 3vw, 28px);
+  padding: clamp(20px, 4.5vw, 52px);
+  box-shadow: 0 12px 36px rgba(1, 146, 63, .06);
+  margin-bottom: 48px;
+}
+
+/* 4. Stats Cards Grid */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: clamp(14px, 2.5vw, 20px);
+  margin-bottom: 36px;
+}
+
+.stat-card {
+  background: #E6F6ED;
+  border: 1px solid #B9E4CC;
+  border-radius: 20px;
+  padding: clamp(16px, 3vw, 22px);
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(1, 146, 63, .12);
+}
+
+.stat-card-num {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 4.5vw, 38px);
+  color: #01923F;
+  line-height: 1;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.stat-card-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4F5F57;
+  letter-spacing: .04em;
+}
+
+@media (max-width: 480px) {
+  .stats-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .stat-card {
+    padding: 14px 10px;
+    border-radius: 16px;
+  }
+  .stat-card-label {
+    font-size: 12px;
+  }
+}
+
+/* 5. Data Tables (Identitas, Guru, Siswa) */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 18px;
+  border: 1px solid #E4E0D3;
+  margin: 24px 0;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 15px;
+}
+
+.data-table th {
+  background: #E6F6ED;
+  color: #01923F;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  padding: 16px 20px;
+  border-bottom: 2px solid #B9E4CC;
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #E4E0D3;
+  color: #2B3D35;
+}
+
+.data-table tr:nth-child(even) {
+  background: #FBFAF6;
+}
+
+.data-table tr:hover {
+  background: #F0F9F4;
+}
+
+.data-table tfoot td {
+  background: #E6F6ED;
+  font-weight: 700;
+  color: #064E24;
+  border-top: 2px solid #B9E4CC;
+}
+
+.badge-pegid {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 13px;
+  background: #FAF7EE;
+  color: #945C00;
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid #E4E0D3;
+}
+
+/* 6. Chart Bar & Trackers */
+.chart-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.chart-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chart-bar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2B3D35;
+}
+
+.chart-bar-track {
+  width: 100%;
+  height: 14px;
+  background: #E4E0D3;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.chart-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #01923F, #FAC601);
+  border-radius: 999px;
+  transition: width 1s ease;
+}
+
+/* 7. Map Frame Embed */
+.map-frame {
+  width: 100%;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #B9E4CC;
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* 8. Call To Action Banner (Bawah Halaman) */
+.s79 {
+  padding-top: clamp(48px, 6vw, 72px);
+  padding-bottom: clamp(48px, 6vw, 72px);
+}
+
+.s80 {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #01923F 0%, #064E24 100%);
+  color: #FFFFFF;
+  border-radius: 28px;
+  padding: clamp(36px, 5vw, 56px) clamp(28px, 5vw, 60px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 36px;
+  box-shadow: 0 16px 40px -10px rgba(1, 146, 63, 0.35);
+  border: 1px solid rgba(250, 198, 1, 0.25);
+}
+
+.s80::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(250, 198, 1, 0.16) 0%, rgba(250, 198, 1, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.s80::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.s80 > div:first-child,
+.s80-content {
+  flex: 1 1 540px;
+  position: relative;
+  z-index: 1;
+}
+
+.s80 .k {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FAC601 !important;
+  margin-bottom: 8px;
+}
+
+.s80 .h2 {
+  color: #FFFFFF !important;
+  font-size: clamp(22px, 3.2vw, 34px);
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.s80 .s80-sub {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 12px 0 0;
+  max-width: 600px;
+}
+
+.s80 .s17 {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.s81 {
+  background: #FAC601;
+  color: #064E24;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all .25s ease;
+  white-space: nowrap;
+}
+
+.s81:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(250, 198, 1, 0.45);
+  background: #ffd633;
+  color: #04381a;
+}
+
+.s82 {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(250, 198, 1, 0.6);
+  color: #FBFAF6;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: all .25s ease;
+  white-space: nowrap;
+}
+
+.s82:hover {
+  background: rgba(250, 198, 1, 0.18);
+  border-color: #FAC601;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 860px) {
+  .s80 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 36px 24px;
+  }
+
+  .s80 .s17 {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .s80 .s17 {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .s80 .s81,
+  .s80 .s82 {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* 9. Footer Madrasah */
+.s83 {
+  background: #12241C;
+  color: #FBFAF6;
+}
+
+.s84 {
+  padding-top: clamp(48px, 6vw, 72px);
+  padding-bottom: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: clamp(28px, 4vw, 40px);
+}
+
+.footer-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+  background: #FFFFFF;
+  padding: 2px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+}
+
+.s85 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.s86 {
+  margin: 0;
+  color: #FAC601;
+  font-size: 14px;
+}
+
+.s87 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #FAC601;
+  margin-bottom: 12px;
+}
+
+.s88 {
+  margin: 0;
+  color: #CFE0D8;
+  line-height: 1.6;
+}
+
+.fh {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #FAC601;
+  margin-bottom: 12px;
+}
+
+.fl {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #9EDCB9;
+}
+
+.fl a:hover {
+  color: #FFFFFF;
+}
+
+.s89 {
+  padding-bottom: 40px;
+  font-size: 13px;
+  color: #9DB5AA;
+}
+
+/* 10. Floating Back-to-Top Button */
+.top, .s90 {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #018439;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(1, 146, 63, .3);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.top:hover {
+  background: #064E24;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* 11. History Timeline (Sejarah & Legalitas) */
+.history-timeline {
+  position: relative;
+  padding-left: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.history-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, #01923F 0%, #B9E4CC 100%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  gap: 0;
+  padding-bottom: 28px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -29px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #01923F;
+  border: 3px solid #E6F6ED;
+  box-shadow: 0 0 0 2px #01923F;
+  z-index: 1;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 3px #01923F, 0 0 12px rgba(1, 146, 63, .25);
+}
+
+.timeline-content {
+  flex: 1;
+  background: #FBFAF6;
+  border: 1px solid #E4E0D3;
+  border-radius: 16px;
+  padding: 18px 22px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  border-color: #B9E4CC;
+  box-shadow: 0 6px 18px rgba(1, 146, 63, .08);
+}
+
+.timeline-date {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #945C00;
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  margin: 0 0 6px;
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #01923F;
+}
+
+.timeline-desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4F5F57;
+}
+
+/* 12. Akreditasi Card */
+.akreditasi-card {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  background: #FFFFFF;
+  border: 2px solid #B9E4CC;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 8px 28px rgba(1, 146, 63, .08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.akreditasi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(1, 146, 63, .14);
+}
+
+.akreditasi-grade {
+  text-align: center;
+  flex-shrink: 0;
+  min-width: 120px;
+}
+
+.akreditasi-letter {
+  font-size: 72px;
+  line-height: 1;
+  color: #01923F;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 12px rgba(1, 146, 63, .15);
+}
+
+.akreditasi-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #945C00;
+}
+
+.akreditasi-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid #E4E0D3;
+  padding-left: 28px;
+}
+
+.akreditasi-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #F0EDE3;
+  gap: 16px;
+}
+
+.akreditasi-detail-row:last-child {
+  border-bottom: none;
+}
+
+.akreditasi-detail-label {
+  font-size: 14px;
+  color: #5E7067;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.akreditasi-detail-value {
+  font-size: 14.5px;
+  color: #12241C;
+  font-weight: 600;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .akreditasi-card {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+  }
+  .akreditasi-details {
+    border-left: none;
+    padding-left: 0;
+    border-top: 2px solid #E4E0D3;
+    padding-top: 16px;
+    width: 100%;
+  }
+  .akreditasi-detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .akreditasi-detail-value {
+    text-align: left;
+  }
+}
+
+/* 13. Akreditasi Badge (Inline) */
+.badge-akreditasi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 12px;
+  background: linear-gradient(135deg, #01923F, #064E24);
+  color: #FAC601;
+  border-radius: 8px;
+  letter-spacing: .04em;
+  box-shadow: 0 2px 8px rgba(1, 146, 63, .2);
+}
+
+/* 14. Info Highlight Cards Grid */
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.info-highlight-card {
+  background: #FBFAF6;
+  border: 1px solid #E4E0D3;
+  border-radius: 18px;
+  padding: 22px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.info-highlight-card:hover {
+  transform: translateY(-4px);
+  border-color: #B9E4CC;
+  box-shadow: 0 10px 28px rgba(1, 146, 63, .1);
+}
+
+.info-highlight-icon {
+  width: 48px;
+  height: 48px;
+  background: #E6F6ED;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.info-highlight-card h4 {
+  margin: 0 0 6px;
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #01923F;
+}
+
+.info-highlight-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #4F5F57;
+  line-height: 1.55;
+}
+
+/* 15. Source Reference Badge */
+.source-ref {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: #FAF7EE;
+  border: 1px solid #E4E0D3;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #5E7067;
+}
+
+.source-ref svg {
+  flex-shrink: 0;
+  color: #945C00;
+}
+
+.source-ref a {
+  color: #01923F;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.source-ref a:hover {
+  color: #064E24;
+  opacity: 1;
+}
+
+/* 16. Info Note Box */
+.info-note {
+  display: flex;
+  gap: 14px;
+  padding: 18px 22px;
+  background: #FAF7EE;
+  border: 1px solid #E4D9B8;
+  border-left: 4px solid #FAC601;
+  border-radius: 0 14px 14px 0;
+}
+
+.info-note-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 17. Quick Summary Grid */
+.quick-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.quick-summary-item {
+  background: #E6F6ED;
+  border: 1px solid #B9E4CC;
+  border-radius: 14px;
+  padding: 18px 20px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.quick-summary-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(1, 146, 63, .1);
+}
+
+.quick-summary-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #5E7067;
+  margin-bottom: 6px;
+}
+
+.quick-summary-value {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #01923F;
+  line-height: 1.3;
+}
+

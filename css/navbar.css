@@ -1,0 +1,344 @@
+/* ==========================================================================
+   MTsS DDI LABAE — NAVBAR & NAVIGATION HEADER
+   css/navbar.css
+   ========================================================================== */
+
+/* 1. Top Bar Kontak & Slogan */
+.tb {
+  background: #018439;
+  color: #FFFFFF;
+  font-size: 13px;
+}
+
+.s2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.s2 a {
+  color: #FFFFFF;
+}
+
+.s2 a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .s2 {
+    justify-content: center;
+    text-align: center;
+    font-size: 11.5px;
+    gap: 4px 12px;
+  }
+}
+
+/* 2. Sticky Header Bar */
+.hd {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 250, 246, .97);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid #E4E0D3;
+  transition: box-shadow .2s ease;
+}
+
+.hd.scrolled {
+  box-shadow: 0 8px 24px rgba(1, 146, 63, .12);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 72px;
+  flex-wrap: wrap;
+}
+
+/* 3. Logo & Identitas Header */
+.s3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+  background: #FFFFFF;
+  padding: 1px;
+  box-shadow: 0 2px 8px rgba(1, 146, 63, .15);
+  transition: transform .2s ease;
+}
+
+.s3:hover .logo-img {
+  transform: scale(1.05);
+}
+
+.s5 {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.s6 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #12241C;
+}
+
+.s7 {
+  font-size: 12px;
+  color: #018439;
+  font-weight: 600;
+}
+
+/* 4. Menu Navigasi Utama */
+.nl {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nl > li {
+  position: relative;
+}
+
+.nl > li > a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2B3D35;
+  transition: background .2s ease, color .2s ease;
+}
+
+.nl > li > a:hover {
+  background: #E6F6ED;
+  color: #01923F;
+  opacity: 1;
+}
+
+.nl > li > a.active {
+  background: #E6F6ED;
+  color: #01923F;
+}
+
+/* 5. Dropdown Menu (Profil & Akademik) */
+.pn {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-top: 8px;
+  min-width: 310px;
+  z-index: 60;
+}
+
+.pn > div {
+  background: #FBFAF6;
+  border: 1px solid #E4E0D3;
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 0 16px 40px rgba(1, 146, 63, .16);
+}
+
+.nl > li:hover > .pn,
+.nl > li:focus-within > .pn {
+  display: block;
+}
+
+.pn a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: background .15s ease;
+}
+
+.pn a:hover {
+  background: #E6F6ED;
+  opacity: 1;
+}
+
+.pn b {
+  display: block;
+  font-size: 15px;
+  color: #01923F;
+  margin-bottom: 2px;
+}
+
+.pn small {
+  display: block;
+  font-size: 13px;
+  color: #4F5F57;
+  line-height: 1.4;
+}
+
+/* 6. Tombol Aksi CTA & Hamburger Mobile */
+.cta {
+  background: #01923F;
+  color: #FBFAF6;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.cta:hover {
+  background: #064E24;
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.hb, .mc {
+  display: none;
+}
+
+/* Intermediate Laptop Sizing (1025px - 1180px) */
+@media (min-width: 1025px) and (max-width: 1180px) {
+  .nl > li > a {
+    padding: 8px 10px;
+    font-size: 14px;
+    gap: 4px;
+  }
+
+  .cta {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .s6 {
+    font-size: 16px;
+  }
+}
+
+/* 7. Responsif Mobile & Tablet Drawer (<= 1024px) */
+@media (max-width: 1024px) {
+  .theme-toggle {
+    order: 1;
+    margin-left: auto;
+  }
+
+  .hb {
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #B9E4CC;
+    border-radius: 12px;
+    background: #E6F6ED;
+    cursor: pointer;
+    transition: background .2s ease;
+  }
+
+  .hb:hover {
+    background: #D4EFE1;
+  }
+
+  .nl {
+    display: none;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    gap: 4px;
+  }
+
+  .nl.open {
+    display: flex;
+    animation: drawerFadeIn .22s ease-out;
+    background: #FBFAF6;
+    border: 1px solid #E4E0D3;
+    border-radius: 20px;
+    padding: 16px;
+    margin-top: 10px;
+    box-shadow: 0 16px 36px rgba(1, 146, 63, .12);
+  }
+
+  .nl > li > a {
+    min-height: 44px;
+    padding: 11px 16px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+
+  .pn {
+    display: block;
+    position: static;
+    min-width: 0;
+    padding: 4px 0 6px 14px;
+  }
+
+  .pn > div {
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pn a {
+    min-height: 40px;
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+
+  .pn small {
+    display: none;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .mc {
+    display: block;
+    margin-top: 6px;
+  }
+
+  .s8 {
+    background: #01923F;
+    color: #FBFAF6 !important;
+    justify-content: center;
+    min-height: 44px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+}
+
+@keyframes drawerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

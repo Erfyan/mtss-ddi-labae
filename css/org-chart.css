@@ -1,0 +1,217 @@
+/* ==========================================================================
+   MTsS DDI LABAE — STRUKTUR ORGANISASI MADRASAH
+   css/org-chart.css
+   ========================================================================== */
+
+.org-chart-section {
+  background: #FFFFFF;
+  border: 1px solid #B9E4CC;
+  border-radius: 24px;
+  padding: 36px 28px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 30px rgba(1, 146, 63, .06);
+}
+
+.org-chart-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.org-chart-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(22px, 3.5vw, 32px);
+  color: #064E24;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.org-chart-subtitle {
+  font-size: 14.5px;
+  color: #5E7067;
+  margin: 0;
+}
+
+.org-tree-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px;
+}
+
+.org-card-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+  transition: transform .2s ease, box-shadow .2s ease;
+  border: 2px solid #0F4C5C;
+}
+
+.org-card-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(15, 76, 92, .22);
+}
+
+.org-card-role {
+  background: #0F4C5C;
+  color: #FFFFFF;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.org-card-role.role-kamad {
+  background: #064E24;
+}
+
+.org-card-role.role-komite {
+  background: #8D5B00;
+}
+
+.org-card-role.role-wakamad {
+  background: #018439;
+}
+
+.org-card-name {
+  background: #FFFFFF;
+  color: #12241C;
+  font-family: 'Fraunces', serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  padding: 10px 14px;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid #E4E0D3;
+}
+
+.org-row-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.org-connector-down {
+  width: 2px;
+  height: 20px;
+  background: #B9E4CC;
+}
+
+.org-level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 960px;
+}
+
+.org-mini-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid #0F4C5C;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .06);
+  text-align: center;
+  transition: transform .2s ease;
+}
+
+.org-mini-card:hover {
+  transform: translateY(-2px);
+}
+
+.org-mini-role {
+  background: #0F4C5C;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 10px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.org-mini-name {
+  background: #FFFFFF;
+  color: #12241C;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 8px 10px;
+}
+
+@media (max-width: 600px) {
+  .org-chart-section {
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+  .org-card-box {
+    min-width: 150px;
+  }
+  .org-row-flex {
+    gap: 12px;
+  }
+  .org-level-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+}
+
+/* ==========================================================================
+   DARK MODE OVERRIDES (Struktur Organisasi)
+   ========================================================================== */
+[data-theme="dark"] .org-chart-section {
+  background: var(--color-card-bg);
+  border-color: var(--color-primary-border);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .3);
+}
+
+[data-theme="dark"] .org-chart-title {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .org-chart-subtitle {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .org-card-box {
+  border-color: var(--color-primary-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .3);
+}
+
+[data-theme="dark"] .org-card-box:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
+}
+
+[data-theme="dark"] .org-card-name {
+  background: var(--color-card-bg);
+  color: var(--color-text-dark);
+  border-top-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .org-connector-down {
+  background: var(--color-primary-border);
+}
+
+[data-theme="dark"] .org-mini-card {
+  border-color: var(--color-primary-border);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
+}
+
+[data-theme="dark"] .org-mini-name {
+  background: var(--color-card-bg);
+  color: var(--color-text-dark);
+}

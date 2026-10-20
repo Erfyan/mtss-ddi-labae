@@ -1,0 +1,617 @@
+/* ==========================================================================
+   MTsS DDI LABAE — MODAL PENCARIAN PINTAR (Quick Navigation Search)
+   css/search-modal.css
+   ========================================================================== */
+
+/* 1. Tombol Trigger Navigasi Header */
+.nav-search-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2B3D35;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  transition: background .2s ease, color .2s ease;
+}
+
+.nav-search-trigger:hover {
+  background: #E6F6ED;
+  color: #01923F;
+  opacity: 1;
+}
+
+.nav-search-trigger:focus-visible {
+  outline: 2px solid #01923F;
+  outline-offset: 2px;
+}
+
+/* 2. Backdrop Overlay */
+.search-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(6, 78, 36, .58);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 16px 24px;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+.search-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* 3. Modal Dialog Box */
+.search-modal-dialog {
+  width: 100%;
+  max-width: 660px;
+  background: #FFFFFF;
+  border: 1px solid #B9E4CC;
+  border-radius: 22px;
+  box-shadow: 0 30px 70px -15px rgba(1, 146, 63, .35), 0 10px 25px rgba(0, 0, 0, .2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-18px) scale(.97);
+  transition: transform .25s cubic-bezier(.16, 1, .3, 1);
+}
+
+.search-modal-backdrop.open .search-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+/* 4. Header & Input Field */
+.search-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid #E4E0D3;
+  background: #FBFAF6;
+}
+
+.search-icon-box {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #01923F;
+  flex-shrink: 0;
+}
+
+.search-input-field {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 17px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: #12241C;
+  font-weight: 500;
+  outline: none;
+  padding: 0;
+  min-width: 0;
+}
+
+.search-input-field::placeholder {
+  color: #7A8D83;
+  font-weight: 400;
+}
+
+.search-clear-btn {
+  border: none;
+  background: #E4E0D3;
+  color: #4F5F57;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  flex-shrink: 0;
+  transition: background .15s ease;
+}
+
+.search-clear-btn.visible {
+  display: flex;
+}
+
+.search-clear-btn:hover {
+  background: #CFE0D8;
+  color: #12241C;
+}
+
+.search-close-btn {
+  border: 1px solid #CFE0D8;
+  background: #FFFFFF;
+  color: #4F5F57;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all .15s ease;
+  font-family: inherit;
+}
+
+.search-close-btn:hover {
+  background: #E6F6ED;
+  color: #01923F;
+  border-color: #B9E4CC;
+}
+
+/* 5. Filter Kategori Chips */
+.search-filter-pills {
+  display: flex;
+  gap: 6px;
+  padding: 10px 18px;
+  background: #FAF7EE;
+  border-bottom: 1px solid #E4E0D3;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.search-filter-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.search-pill-btn {
+  border: 1px solid #D5DEC4;
+  background: #FFFFFF;
+  color: #4F5F57;
+  padding: 5px 13px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .15s ease;
+}
+
+.search-pill-btn:hover {
+  background: #E6F6ED;
+  color: #01923F;
+  border-color: #B9E4CC;
+}
+
+.search-pill-btn.active {
+  background: #01923F;
+  color: #FFFFFF;
+  border-color: #01923F;
+  box-shadow: 0 2px 6px rgba(1, 146, 63, .25);
+}
+
+/* 6. Daftar Hasil Pencarian */
+.search-results-list {
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 8px 12px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.search-results-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-results-list::-webkit-scrollbar-thumb {
+  background: #CFE0D8;
+  border-radius: 999px;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #12241C;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all .15s ease;
+}
+
+.search-result-item:hover, 
+.search-result-item.selected {
+  background: #E6F6ED;
+  border-color: #B9E4CC;
+  transform: translateX(2px);
+}
+
+.search-result-item:focus-visible {
+  outline: 2px solid #01923F;
+  outline-offset: 1px;
+}
+
+.search-result-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #F0F9F4;
+  color: #01923F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all .15s ease;
+}
+
+.search-result-item:hover .search-result-icon, 
+.search-result-item.selected .search-result-icon {
+  background: #01923F;
+  color: #FFFFFF;
+}
+
+.search-result-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-result-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+  flex-wrap: wrap;
+}
+
+.search-result-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #12241C;
+  line-height: 1.3;
+}
+
+.search-result-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: #E9E4D3;
+  color: #6B6A58;
+}
+
+.search-result-badge.badge-profil {
+  background: #E6F6ED;
+  color: #01923F;
+}
+
+.search-result-badge.badge-akademik {
+  background: #FFF6D6;
+  color: #945C00;
+}
+
+.search-result-badge.badge-kegiatan {
+  background: #EBF2FF;
+  color: #185ADB;
+}
+
+.search-result-badge.badge-berita {
+  background: #F8E7FF;
+  color: #7828C8;
+}
+
+.search-result-badge.badge-kontak {
+  background: #FFEBE6;
+  color: #C4320A;
+}
+
+.search-result-desc {
+  font-size: 12.5px;
+  color: #5E7067;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.search-result-action {
+  font-size: 12px;
+  font-weight: 600;
+  color: #01923F;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+
+.search-result-item:hover .search-result-action, 
+.search-result-item.selected .search-result-action {
+  opacity: 1;
+}
+
+/* 7. Highlight Match & Empty State */
+.search-match {
+  background: #FAC601;
+  color: #064E24;
+  font-weight: 700;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+.search-empty-state {
+  padding: 40px 24px;
+  text-align: center;
+  color: #5E7067;
+}
+
+.search-empty-icon {
+  width: 48px;
+  height: 48px;
+  stroke: #8BA79A;
+  margin: 0 auto 12px;
+  display: block;
+}
+
+.search-empty-title {
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  color: #01923F;
+  margin: 0 0 6px;
+}
+
+.search-empty-text {
+  font-size: 14px;
+  margin: 0 0 16px;
+  color: #5E7067;
+}
+
+.search-suggestions-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.search-sugg-btn {
+  background: #E6F6ED;
+  border: 1px solid #B9E4CC;
+  color: #01923F;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .15s ease;
+}
+
+.search-sugg-btn:hover {
+  background: #01923F;
+  color: #FFFFFF;
+  border-color: #01923F;
+}
+
+/* 8. Footer Modal & Shortcuts */
+.search-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #FAF7EE;
+  border-top: 1px solid #E4E0D3;
+  font-size: 12px;
+  color: #5E7067;
+}
+
+.search-footer-shortcuts {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-kbd {
+  background: #FFFFFF;
+  border: 1px solid #CFE0D8;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 11px;
+  font-family: monospace;
+  color: #2B3D35;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .08);
+}
+
+@media (max-width: 600px) {
+  .search-modal-backdrop {
+    padding-top: 20px;
+  }
+  .search-modal-dialog {
+    border-radius: 16px;
+  }
+  .search-modal-header {
+    padding: 14px 16px;
+  }
+  .search-input-field {
+    font-size: 15px;
+  }
+  .search-footer-shortcuts {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   DARK MODE OVERRIDES (Search Modal)
+   ========================================================================== */
+[data-theme="dark"] .search-modal-backdrop {
+  background: rgba(6, 20, 12, .75);
+}
+
+[data-theme="dark"] .search-modal-dialog {
+  background: var(--color-card-bg);
+  border-color: var(--color-primary-border);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, .75), 0 10px 25px rgba(0, 0, 0, .5);
+}
+
+[data-theme="dark"] .search-modal-header {
+  background: var(--color-bg-sand);
+  border-bottom-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .search-icon-box {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .search-input-field {
+  color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .search-input-field::placeholder {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .search-clear-btn {
+  background: var(--color-border-light);
+  color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .search-clear-btn:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .search-close-btn {
+  background: var(--color-card-bg);
+  border-color: var(--color-border-light);
+  color: var(--color-text-body);
+}
+
+[data-theme="dark"] .search-close-btn:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-color: var(--color-primary-border);
+}
+
+[data-theme="dark"] .search-filter-pills {
+  background: var(--color-bg-sand);
+  border-bottom-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .search-pill-btn {
+  background: var(--color-card-bg);
+  border-color: var(--color-border-light);
+  color: var(--color-text-body);
+}
+
+[data-theme="dark"] .search-pill-btn:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-color: var(--color-primary-border);
+}
+
+[data-theme="dark"] .search-pill-btn.active {
+  background: var(--color-primary);
+  color: #0A1910;
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .search-result-item {
+  color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .search-result-item:hover,
+[data-theme="dark"] .search-result-item.selected {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-border);
+}
+
+[data-theme="dark"] .search-result-icon {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .search-result-item:hover .search-result-icon,
+[data-theme="dark"] .search-result-item.selected .search-result-icon {
+  background: var(--color-primary);
+  color: #0A1910;
+}
+
+[data-theme="dark"] .search-result-title {
+  color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .search-result-desc {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .search-result-action {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .search-match {
+  background: var(--color-accent);
+  color: #0A1D12;
+}
+
+[data-theme="dark"] .search-empty-state {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .search-empty-icon {
+  stroke: var(--color-text-muted);
+}
+
+[data-theme="dark"] .search-empty-title {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .search-empty-text {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .search-sugg-btn {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-border);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .search-sugg-btn:hover {
+  background: var(--color-primary);
+  color: #0A1910;
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .search-modal-footer {
+  background: var(--color-bg-sand);
+  border-top-color: var(--color-border-light);
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .search-kbd {
+  background: var(--color-card-bg);
+  border-color: var(--color-border-light);
+  color: var(--color-text-dark);
+}

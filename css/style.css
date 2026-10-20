@@ -1,0 +1,22 @@
+/* ==========================================================================
+   MTsS DDI LABAE — MASTER STYLESHEET
+   Website Resmi Madrasah Tsanawiyah Swasta DDI Labae, Kabupaten Soppeng
+   "Sekolah Adalah Surgaku"
+   
+   File ini berfungsi sebagai entry-point dan bundler modular terstruktur:
+   ├── 1. css/variables.css    -> Token desain, warna resmi DDI, tipografi & utilitas
+   ├── 2. css/navbar.css       -> Topbar, sticky header, logo, menu dropdown & mobile drawer
+   ├── 3. css/components.css   -> Komponen umum (tabel data, stats, peta, CTA, footer, top button)
+   ├── 4. css/home.css         -> Seksi khusus beranda index.html (Hero, Visi, Liputan preview, dll)
+   ├── 5. css/pages.css        -> Layout halaman internal (Sambutan Kamad, Liputan, Blog detail)
+   ├── 6. css/org-chart.css    -> Bagan hierarki resmi Struktur Organisasi MTs. DDI Labae
+   └── 7. css/search-modal.css -> Dialog & animasi pencarian navigasi pintar (Spotlight Quick Search)
+   ========================================================================== */
+
+@import url('variables.css');
+@import url('navbar.css');
+@import url('components.css');
+@import url('home.css');
+@import url('pages.css');
+@import url('org-chart.css');
+@import url('search-modal.css');
