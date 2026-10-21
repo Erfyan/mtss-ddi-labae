@@ -117,8 +117,8 @@ button:focus-visible {
 .w {
   max-width: 1200px;
   margin: 0 auto;
-  padding-left: clamp(16px, 4vw, 32px);
-  padding-right: clamp(16px, 4vw, 32px);
+  padding-left: clamp(14px, 3.5vw, 32px);
+  padding-right: clamp(14px, 3.5vw, 32px);
   box-sizing: border-box;
   width: 100%;
 }
@@ -126,7 +126,7 @@ button:focus-visible {
 /* Typography Utilities */
 .k {
   margin: 0 0 16px;
-  font-size: 13px;
+  font-size: clamp(11.5px, 1.6vw, 13px);
   font-weight: 600;
   letter-spacing: .16em;
   text-transform: uppercase;
@@ -143,16 +143,16 @@ button:focus-visible {
   margin: 0;
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: clamp(30px, 4vw, 46px);
-  line-height: 1.12;
+  font-size: clamp(22px, 3.8vw, 42px);
+  line-height: 1.18;
   letter-spacing: -.01em;
 }
 
 /* Grid layout row */
 .row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(16px, 3vw, 24px);
 }
 
 /* Standard icon styling */
@@ -439,10 +439,71 @@ button:focus-visible {
   border-bottom-color: var(--color-border-light);
 }
 
-/* Activity cards */
+/* Activity cards & Program Pembiasaan Religius (Dark Mode) */
+[data-theme="dark"] .kegiatan-lead {
+  color: var(--color-text-body);
+}
+
 [data-theme="dark"] .s46 {
   background: var(--color-card-bg);
   border-color: var(--color-border-light);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .25);
+}
+
+[data-theme="dark"] .s46:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, .45);
+}
+
+[data-theme="dark"] .s47 {
+  color: #F0F6F2;
+}
+
+[data-theme="dark"] .s48 {
+  color: var(--color-text-body);
+}
+
+[data-theme="dark"] .kegiatan-icon-box {
+  background: #143522;
+  color: var(--color-primary);
+  border-color: var(--color-primary-border);
+}
+
+[data-theme="dark"] .s46:hover .kegiatan-icon-box {
+  background: var(--color-primary);
+  color: #0B1910;
+}
+
+[data-theme="dark"] .kegiatan-num {
+  color: var(--color-primary);
+  background: rgba(46, 204, 113, 0.12);
+  border: 1px solid var(--color-primary-border);
+}
+
+[data-theme="dark"] .kegiatan-badge {
+  color: #FAC601;
+  background: rgba(250, 198, 1, 0.14);
+  border: 1px solid rgba(250, 198, 1, 0.28);
+}
+
+[data-theme="dark"] .kegiatan-quote-banner {
+  background: linear-gradient(135deg, #0A2816 0%, #113D24 100%);
+  border: 1px solid var(--color-primary-border);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .45);
+}
+
+[data-theme="dark"] .kegiatan-quote-text {
+  color: #E8F0EC;
+}
+
+[data-theme="dark"] .kegiatan-quote-text strong {
+  color: #FAC601;
+}
+
+[data-theme="dark"] .pillar-icon {
+  background: #143522;
+  color: var(--color-primary);
+  border-color: var(--color-primary-border);
 }
 
 /* Liputan section (Home) */
@@ -571,6 +632,11 @@ button:focus-visible {
   background: var(--color-card-bg);
   border-color: var(--color-border-light);
   box-shadow: 0 12px 36px var(--color-shadow);
+}
+
+[data-theme="dark"] .content-box .h2,
+[data-theme="dark"] .h2[style*="color:#01923F"] {
+  color: var(--color-primary) !important;
 }
 
 /* Data Tables */
@@ -903,15 +969,275 @@ button:focus-visible {
   stroke: var(--color-text-muted);
 }
 
-/* Kamad card, speech */
+/* ==========================================================================
+   HALAMAN SAMBUTAN KEPALA MADRASAH (Dark Mode)
+   ========================================================================== */
+[data-theme="dark"] .speech-article {
+  background: var(--color-card-bg);
+  border-color: var(--color-border-light);
+  box-shadow: 0 12px 36px var(--color-shadow);
+}
+
+[data-theme="dark"] .speech-header {
+  border-bottom-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .speech-badge {
+  background: #1A3A28;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary-border);
+}
+
+[data-theme="dark"] .speech-title {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .speech-meta {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .speech-meta-item svg {
+  stroke: var(--color-primary);
+}
+
+[data-theme="dark"] .greeting-box {
+  background: rgba(250, 198, 1, 0.08);
+  border-left-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .speech-content p {
+  color: var(--color-text-body);
+}
+
+[data-theme="dark"] .speech-content p.lead {
+  color: #F0F6F2;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .speech-content p strong {
+  color: #F0F6F2;
+}
+
+[data-theme="dark"] .speech-content p em {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .speech-quote {
+  background: #143522;
+  border-left-color: var(--color-primary);
+}
+
+[data-theme="dark"] .speech-quote p {
+  color: #E8F0EC;
+}
+
+[data-theme="dark"] .speech-closing {
+  border-top-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .signature-name {
+  color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .signature-loc {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .signature-title {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .pillars-section {
+  border-top-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .pillars-title {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .pillar-card {
+  background: var(--color-bg-sand);
+  border-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .pillar-card:hover {
+  background: var(--color-card-hover);
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .pillar-num {
+  background: #1A3A28;
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .pillar-card h4,
+[data-theme="dark"] .pillar-heading {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .pillar-card p,
+[data-theme="dark"] .pillar-text {
+  color: var(--color-text-muted);
+}
+
 [data-theme="dark"] .kamad-card {
   background: var(--color-card-bg);
   border-color: var(--color-primary-border);
 }
 
+[data-theme="dark"] .kamad-name {
+  color: #F0F6F2;
+}
+
+[data-theme="dark"] .kamad-role {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .kamad-badge {
+  background: #1A3A28;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary-border);
+}
+
+[data-theme="dark"] .motto-card {
+  background: var(--color-bg-sand);
+  border-color: rgba(250, 198, 1, 0.3);
+}
+
+[data-theme="dark"] .motto-title {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .motto-card blockquote {
+  color: var(--color-text-body);
+}
+
 [data-theme="dark"] .quick-links-card {
   background: var(--color-bg-sand);
   border-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .quick-links-title {
+  color: #F0F6F2;
+}
+
+[data-theme="dark"] .quick-links-list a {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .quick-links-list a:hover {
+  background: #1A3A28;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   HALAMAN TENAGA PENDIDIK & DEWAN GURU (Dark Mode)
+   ========================================================================== */
+[data-theme="dark"] .wali-kelas-wrap {
+  background: var(--color-card-bg);
+  border-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .wali-card {
+  background: var(--color-bg-sand);
+  border-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .wali-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .4);
+}
+
+[data-theme="dark"] .wali-name {
+  color: #F0F6F2;
+}
+
+[data-theme="dark"] .wali-mapel {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .wali-extra {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .wali-extra b {
+  color: #F0F6F2;
+}
+
+[data-theme="dark"] .wali-count.c7 {
+  color: #70B4FF;
+}
+
+[data-theme="dark"] .wali-count.c8 {
+  color: #4ADE80;
+}
+
+[data-theme="dark"] .wali-count.c9 {
+  color: #FAC601;
+}
+
+[data-theme="dark"] .news-search-box {
+  background: var(--color-bg-sand);
+  border-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .news-search-input {
+  color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .news-search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .news-search-icon {
+  stroke: var(--color-primary);
+}
+
+[data-theme="dark"] .text-pimpinan {
+  color: #4ADE80;
+}
+
+[data-theme="dark"] .text-komite {
+  color: #FAC601;
+}
+
+[data-theme="dark"] .text-wakamad {
+  color: #4ADE80;
+}
+
+[data-theme="dark"] .text-walikelas {
+  color: #70B4FF;
+}
+
+[data-theme="dark"] .text-sarpras,
+[data-theme="dark"] .text-perpustakaan,
+[data-theme="dark"] .text-ktu {
+  color: #64D2FF;
+}
+
+[data-theme="dark"] .table-total-count {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .badge-kamad {
+  background: #143522;
+  color: #4ADE80;
+  border: 1px solid #2A5C3F;
+}
+
+[data-theme="dark"] .badge-komite {
+  background: #3B2A10;
+  color: #FAC601;
+  border: 1px solid #5C4517;
+}
+
+[data-theme="dark"] .teacher-row td b {
+  color: #F0F6F2;
+}
+
+[data-theme="dark"] .teacher-row td {
+  color: var(--color-text-body);
 }
 
 /* Blog elements */

@@ -298,6 +298,14 @@
   font-size: 15px;
 }
 
+.signature-name {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: #064E24;
+  margin-top: 8px;
+}
+
 .pillars-section {
   margin-top: 56px;
   padding-top: 48px;
@@ -1810,6 +1818,54 @@
   background: #FAF7EE;
   color: #8D5B00;
   border-color: #FAC601;
+}
+
+/* Teacher Table Semantic Typography */
+.text-pimpinan {
+  color: #064E24;
+  font-weight: 600;
+}
+
+.text-komite {
+  color: #8D5B00;
+  font-weight: 600;
+}
+
+.text-wakamad {
+  color: #018439;
+  font-weight: 600;
+}
+
+.text-walikelas {
+  color: #1A73E8;
+  font-weight: 600;
+}
+
+.text-sarpras,
+.text-perpustakaan,
+.text-ktu {
+  color: #0F4C5C;
+  font-weight: 600;
+}
+
+.table-total-count {
+  color: #01923F;
+  font-size: 16px;
+}
+
+.wali-count.c7 {
+  color: #1A73E8;
+  font-weight: 600;
+}
+
+.wali-count.c8 {
+  color: #018439;
+  font-weight: 600;
+}
+
+.wali-count.c9 {
+  color: #B06000;
+  font-weight: 600;
 }
 
 /* Dark mode overrides for Wali cards & badges */
