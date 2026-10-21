@@ -51,10 +51,10 @@
 .content-box {
   background: #FFFFFF;
   border: 1px solid #E4E0D3;
-  border-radius: clamp(18px, 3vw, 28px);
-  padding: clamp(20px, 4.5vw, 52px);
+  border-radius: clamp(16px, 3vw, 28px);
+  padding: clamp(16px, 3.5vw, 48px);
   box-shadow: 0 12px 36px rgba(1, 146, 63, .06);
-  margin-bottom: 48px;
+  margin-bottom: clamp(24px, 4vw, 48px);
 }
 
 /* 4. Stats Cards Grid */
