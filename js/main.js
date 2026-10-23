@@ -167,12 +167,12 @@
       icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>'
     },
     {
-      title: 'Penerimaan Santri Baru (PPDB)',
+      title: 'SPMB 2026/2027 (Penerimaan Murid Baru)',
       category: 'Akademik',
       badgeClass: 'badge-akademik',
-      url: 'data-siswa.html#ppdb',
-      keywords: ['ppdb', 'pendaftaran', 'murid baru', 'santri baru', 'daftar', 'masuk', 'syarat', 'formulir', 'penerimaan', 'calon siswa'],
-      desc: 'Informasi penerimaan peserta didik baru (PPDB), persyaratan administrasi dan konsultasi pendaftaran.',
+      url: 'index.html#spmb',
+      keywords: ['spmb', 'ppdb', 'penerimaan murid baru', 'santri baru', 'pendaftaran', 'brosur', 'syarat', 'seragam gratis', 'atk gratis', 'sukma asni', 'samsuria', 'alur', 'biaya', 'formulir', 'daftar'],
+      desc: 'Informasi resmi SPMB 2026/2027: Belajar, Berakhlak, Berprestasi. Gratis seragam & ATK, alur pendaftaran, dan narahubung WhatsApp.',
       icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>'
     },
     {
