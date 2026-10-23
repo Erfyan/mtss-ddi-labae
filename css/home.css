@@ -1526,3 +1526,229 @@
   }
 }
 
+/* ==========================================================================
+   SPMB SECTION (index.html#spmb) — Brosur Gallery + Download
+   ========================================================================== */
+.spmb-home-section {
+  padding-top: clamp(48px, 6vw, 80px);
+  padding-bottom: clamp(56px, 8vw, 96px);
+  background: var(--color-bg);
+  position: relative;
+}
+
+/* Section Header */
+.spmb-section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+.spmb-tagline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(1, 146, 63, 0.1);
+  border: 1px solid rgba(1, 146, 63, 0.25);
+  color: #01923F;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+[data-theme="dark"] .spmb-tagline-badge {
+  background: rgba(74, 222, 128, 0.12);
+  border-color: rgba(74, 222, 128, 0.3);
+  color: #4ADE80;
+}
+
+.spmb-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 4vw, 42px);
+  line-height: 1.2;
+  margin: 0 0 12px;
+  color: var(--color-heading);
+}
+
+.spmb-lead {
+  font-size: clamp(15px, 2vw, 17px);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Brosur Gallery */
+.spmb-brosur-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.spmb-brosur-item {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+}
+
+.spmb-brosur-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(1, 146, 63, 0.12);
+}
+
+.spmb-brosur-label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.spmb-brosur-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spmb-brosur-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Action Bar: Download + Contact */
+.spmb-action-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Download Button */
+.spmb-btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #01923F 0%, #064E24 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px 36px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 8px 28px rgba(1, 146, 63, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.spmb-btn-download::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spmb-btn-download:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(1, 146, 63, 0.35);
+}
+
+.spmb-btn-download:hover::before {
+  opacity: 1;
+}
+
+.spmb-btn-download:active {
+  transform: translateY(-1px);
+}
+
+/* Contact WA Buttons */
+.spmb-contact-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.spmb-btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+}
+
+.spmb-btn-wa:hover {
+  background: #1EBE5D;
+  transform: translateY(-2px);
+}
+
+/* SPMB Responsive */
+@media (max-width: 768px) {
+  .spmb-brosur-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .spmb-brosur-item {
+    border-radius: 16px;
+  }
+
+  .spmb-btn-download {
+    font-size: 14px;
+    padding: 14px 28px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .spmb-contact-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .spmb-btn-wa {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .spmb-tagline-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .spmb-brosur-label {
+    font-size: 10.5px;
+    padding: 4px 10px;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+
