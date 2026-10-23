@@ -239,6 +239,87 @@
       icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>'
     },
     {
+      title: 'Semangat Berprestasi, Kontingen MTsS DDI Labae Ikuti OMI 2026',
+      category: 'Berita',
+      badgeClass: 'badge-berita',
+      url: 'liputan-omi-2026.html',
+      keywords: ['omi', 'olimpiade madrasah indonesia', 'sains', 'prestasi', 'kompetisi', 'kontingen', 'daya pikir kritis', '2026'],
+      desc: 'Kontingen MTsS DDI Labae mengikuti Olimpiade Madrasah Indonesia (OMI) 2026 mengembangkan potensi akademik dan semangat berprestasi.',
+      icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>'
+    },
+    {
+      title: 'Peringatan Hari Santri 2026: Zikir dan Selawat',
+      category: 'Berita',
+      badgeClass: 'badge-berita',
+      url: 'liputan-hari-santri-2026.html',
+      keywords: ['hari santri', 'hsn 2026', 'zikir', 'selawat', 'rasulullah', 'karakter religius', '22 oktober'],
+      desc: 'Peringatan Hari Santri Nasional 2026 di MTsS DDI Labae dengan memperbanyak zikir dan selawat bersama santri.',
+      icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>'
+    },
+    {
+      title: 'Semarak Kemah Bhakti Tsanlab Scout',
+      category: 'Berita',
+      badgeClass: 'badge-berita',
+      url: 'liputan-pramuka-scout.html',
+      keywords: ['kemah pramuka', 'tsanlab scout', 'pionering', 'perkemahan', 'bambu', 'pramuka', 'gugus depan', '2026'],
+      desc: 'Kemah Bhakti Gugus Depan Tsanlab Scout MTsS DDI Labae membentuk ketangguhan karakter dan kreativitas pionering.',
+      icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>'
+    },
+    {
+      title: 'Peringatan Maulid Nabi Muhammad SAW',
+      category: 'Berita',
+      badgeClass: 'badge-berita',
+      url: 'liputan-maulid-nabi.html',
+      keywords: ['maulid', 'maulid nabi', 'phbi', 'masjid', 'shalawat', 'santriwati', 'male telur', '2026'],
+      desc: 'Peringatan Maulid Nabi Muhammad SAW di masjid dengan khidmat, selawat merdu santriwati dan tausiyah keteladanan Rasulullah.',
+      icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>'
+    },
+    {
+      title: 'Kolaborasi Pengabdian Mahasiswa KKN Bersama Guru',
+      category: 'Berita',
+      badgeClass: 'badge-berita',
+      url: 'liputan-kkn-kolaborasi.html',
+      keywords: ['kkn', 'mahasiswa', 'kolaborasi', 'pengabdian', 'cenderamata', 'dewan guru', 'kkn 2025'],
+      desc: 'Sinergi pengabdian mahasiswa KKN bersama segenap dewan guru MTsS DDI Labae dalam pendampingan belajar santri.',
+      icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>'
+    },
+    {
+      title: 'Silaturahim Orang Tua Siswa & Komite Madrasah',
+      category: 'Berita',
+      badgeClass: 'badge-berita',
+      url: 'liputan-rapat-komite.html',
+      keywords: ['silaturahim', 'komite', 'rapat komite', 'orang tua', 'wali murid', 'sinergi', 'mutu pendidikan'],
+      desc: 'Pertemuan silaturahim madrasah bersama orang tua siswa dan pengurus komite MTsS DDI Labae.',
+      icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>'
+    },
+    {
+      title: 'Pemilihan Ketua OSIM MTsS DDI Labae',
+      category: 'Berita',
+      badgeClass: 'badge-berita',
+      url: 'liputan-pemilihan-osim.html',
+      keywords: ['osim', 'ketua osim', 'pemilihan', 'demokrasi', 'kepemimpinan', 'organisasi siswa', 'suara santri'],
+      desc: 'Pelaksanaan Pemilihan Ketua OSIM MTsS DDI Labae menanamkan nilai demokrasi dan melatih jiwa kepemimpinan peserta didik.',
+      icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>'
+    },
+    {
+      title: 'Tanamkan Karakter Religius: Salat Duha & Zikir Bersama',
+      category: 'Berita',
+      badgeClass: 'badge-berita',
+      url: 'liputan-salat-duha.html',
+      keywords: ['salat duha', 'duha', 'zikir', 'tadarus', 'karakter religius', 'pembiasaan', 'ibadah sunah'],
+      desc: 'Pembiasaan ibadah salat Duha, tadarus Al-Qur’an, dan zikir bersama di MTsS DDI Labae membentuk karakter santri yang berakhlak mulia.',
+      icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>'
+    },
+    {
+      title: 'Penutupan MATAMUDA 2026: Pembentukan Akhlak',
+      category: 'Berita',
+      badgeClass: 'badge-berita',
+      url: 'liputan-matamuda-2026.html',
+      keywords: ['matamuda', 'matamuda 2026', 'taaruf', 'santri baru', 'akhlak', 'karakter', 'kepala madrasah'],
+      desc: 'Penutupan Masa Taaruf Murid Madrasah (MATAMUDA) 2026 MTsS DDI Labae dengan penekanan adab dan akhlak mulia.',
+      icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>'
+    },
+    {
       title: 'Galeri Foto & Potret Kegiatan',
       category: 'Kegiatan',
       badgeClass: 'badge-kegiatan',
